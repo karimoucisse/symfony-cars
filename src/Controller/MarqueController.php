@@ -71,10 +71,10 @@ class MarqueController extends AbstractController
         if($marque == null){
             return $this->redirectToRoute('app_marque');
         }
-        $modele = $em->getRepository(Modele::class)->findAll();
+        // $modele = $em->getRepository(Modele::class)->findAll();
         return $this->render('marque/marque_produit.html.twig', [
             'marque' => $marque,
-            'modele' => $modele->getMarque(),
+            // 'modele' => $modele->getMarque(),
         ]);
     }
 

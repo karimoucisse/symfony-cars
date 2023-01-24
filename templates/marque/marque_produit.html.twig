@@ -6,9 +6,11 @@
 
     <div class="container">
         <h1>{{ marque.nom }}</h1>
+        {# <h1>{{ marque.date_de_creation|date('m/d/Y') }}</h1> #}
+        
     </div>
-    {% for element in modele %}
+    {# {% for element in modele %}
         <p>{{element.nom}}</p>
-    {% endfor %}
+    {% endfor %} #}
 
 {% endblock %}

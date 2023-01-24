@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: MarqueRepository::class)]
 class Marque
@@ -17,15 +18,18 @@ class Marque
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
     private ?string $nom = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Assert\NotBlank]
     private ?\DateTimeInterface $date_de_creation = null;
 
     #[ORM\Column(length: 255)]
     private ?string $logo = null;
 
     #[ORM\OneToMany(mappedBy: 'marque', targetEntity: Modele::class, orphanRemoval: true)]
+    #[Assert\NotBlank]
     private Collection $marque;
 
     public function __construct()

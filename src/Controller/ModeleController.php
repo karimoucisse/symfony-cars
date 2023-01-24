@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/modele')]
 class ModeleController extends AbstractController
 {
     // ajouter des modele
@@ -55,7 +56,7 @@ class ModeleController extends AbstractController
         ]);
     }
 
-    #[Route('/modele/{id}', name: 'modele')]
+    #[Route('/{id}', name: 'modele')]
     public function marqueProduit( Modele $modele=null): Response
     {
         if($modele == null){
@@ -67,7 +68,7 @@ class ModeleController extends AbstractController
         ]);
     }
 
-    #[Route('/modele/modifier/{id}', name:'modeleForm')]
+    #[Route('/modifier/{id}', name:'modeleForm')]
     public function category(Modele $modele = null, EntityManagerInterface $em, Request $request): Response
     {
         if($modele == null){
@@ -87,7 +88,7 @@ class ModeleController extends AbstractController
         ]);
     }
 
-    #[Route('/modeledelete/{id}', name: 'modele_delete')]
+    #[Route('/delete/{id}', name: 'modele_delete')]
     public function delete(Modele $modele= null, EntityManagerInterface $em): Response
     {
         if($modele == null){
