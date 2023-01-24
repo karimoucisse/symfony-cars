@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MarqueController!{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>{{ marque.nom }}</h1>
+    </div>
+    {% for element in modele %}
+        <p>{{element.nom}}</p>
+    {% endfor %}
+
+{% endblock %}

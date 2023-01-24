@@ -1,0 +1,46 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.image_container{
+    width: 880px;
+    height: 500px;
+    position: relative;
+}
+.button_container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: auto;
+}
+button {
+    padding: 15px 25px;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+button:hover {
+    transform: scale(1.01);
+}
+.btn_modifier{
+    background-color: teal;
+}
+.btn_supprimer{
+    background-color: rgb(196, 9, 9);
+}
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+p {
+    margin-top: 10px;
+    font-size: 20px;
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MarqueController!{% endblock %}
+
+{% block stylesheets %}
+    <link href='{{ asset('assets/css/modele.css') }}' rel="stylesheet"> 
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="image_container">
+            <img src="{{ asset('uploads/' ~ modele.image) }}" class="image">
+            <div class="button_container">
+                <button class="btn_modifier"><a href="{{path('modeleForm', {'id': modele.id})}}}">modifier</a></button>
+                <button class="btn_supprimer"><a href="{{path('modele_delete', {'id': modele.id})}}}">supprimer</a></button>
+            </div>
+        </div>
+        <p>{{ modele.nom }}</p>
+        <p>{{ modele.prix }} €</p>
+    </div>
+{% endblock %}

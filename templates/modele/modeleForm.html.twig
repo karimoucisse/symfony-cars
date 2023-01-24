@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MarqueController!{% endblock %}
+
+{% block stylesheets %}
+    <link href='{{ asset('assets/css/marque.css') }}' rel="stylesheet"> 
+{% endblock %}
+
+{% block body %}
+
+    {{ form(modifier) }}
+
+{% endblock %}

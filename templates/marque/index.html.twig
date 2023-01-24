@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MarqueController!{% endblock %}
+
+{% block stylesheets %}
+    <link href='{{ asset('assets/css/marque.css') }}' rel="stylesheet"> 
+{% endblock %}
+
+{% block body %}
+
+    <header>
+        <div class="logo">Logo</div>
+        <div class="nav_items">
+            <ul>
+                {% for marque in marques %}
+                    <li>
+                        <a href="{{path('marque_produit', {'id': marque.id})}}}">
+                            <img src="{{ asset('uploads/' ~ marque.logo) }}" class="header_img">
+                            <p>{{ marque.nom }}</p>
+                        </a>
+                    </li>
+                {% else %}
+                    <li>il n'y a pas de marque</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="btn_container">
+            <button><a href="{{ path('marque') }}">Ajouter des marques</a></button> 
+            <button><a href="{{ path('app_modele') }}">Ajouter des modeles</a></button> 
+        </div>
+    </header>
+
+    <div class="container">
+        {% for item in modele %}
+            <div class="item">
+                <a href="{{path('modele', {'id': item.id})}}}">
+                    <img src="{{ asset('uploads/' ~ item.image) }}" class="item_image">
+                    <div class= "description">
+                        <p>{{ item.nom }}</p>
+                        <p>{{ item.prix }} €</p>
+                    </div>
+                </a>
+            </div>
+        {% else %}
+            <h1 class="empty_message">Il n'y a pas de modele de voiture</h1>
+        {% endfor %}
+    </div>
+
+{% endblock %}
